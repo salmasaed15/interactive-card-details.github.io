@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Kumbh+Sans:wght@400;600&family=Overpass:wght@400;700&family=Poppins:wght@100;300;400;500;600;700&family=Rubik:wght@300;400;500&family=Space+Grotesk:wght@500&family=Space+Mono&display=swap');
+:root{
+--White: hsl(0, 0%, 100%);
+--Light-grayish-violet: hsl(270, 3%, 87%);
+--Dark-grayish-violet: hsl(279, 6%, 55%);
+--Very-dark-violet: hsl(278, 68%, 11%);
+}
+*{
+    font-family: 'Space Grotesk';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.card{
+    width:30%;
+    background-image: url("images/bg-main-desktop.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    position: relative;
+    height: 700px;
+}
+.card .front{
+    position: absolute;
+    background-image: url("images/bg-card-front.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    width: 350px;
+    height: 200px;
+    border-radius: 5px;
+    left: 150px;
+    top:80px;
+    padding: 15px;
+}
+.front h2{
+    padding-top: 25px;
+    font-size: 25px;
+    color: #fff;
+    font-weight: lighter;
+}
+.front .info{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+.card .back{
+    width: 350px;
+    height: 200px;
+    border-radius: 8px; 
+    background-image: url("images/bg-card-back.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    position: absolute;
+    left: 235px;
+    top:315px;
+    
+}
+.back p{
+    position: absolute;
+    color: #fff;
+    font-weight: bold;
+    top: 75px;
+    left: 280px;
+}
+.form{
+    width: 70%;
+    padding-left: 250px;
+    padding-bottom: 150px;
+}
+
+label{
+    font-size: 12px;
+    font-weight: 600;
+    color:var(--light-grayish-violet);
+}
+
+.card-name input,
+.card-number input{
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid hsl(0, 3%, 85%);
+    margin-bottom: 15px;
+}
+input[type="text"]{
+    color: hsl(0, 3%, 21%);
+}
+
+.exp-date{
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.exp-date .input-control{
+    margin-left: 0;
+}
+.exp-date input{
+    width: 60px;
+    height: 35px;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid hsl(0, 3%, 85%);
+}
+input.edit{
+    width: 140px;
+}
+
+button{
+    width: 300px;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    color: hsl(279, 6%, 55%);
+    cursor: pointer;
+    background-color: var(--Very-dark-violet);
+}
+.erorr{
+    color: rgb(240, 77, 77);
+    font-size: 12px;
+}
+/* form{
+    display: block;
+} */
+.hidden {
+    display: none;
+}
+/* THANK YOU MESSAGE */
+.thank{
+    width: 300px;
+
+}
+.thank img{
+    width: 70px;
+    height: 70px;
+    margin-left:100px;
+    margin-bottom: 40px;
+    
+}
+.thank h1, p{
+    text-align: center;
+    margin-top: 10px;
+}
+.thank h1{
+    font-size: 25px;
+    font-weight: lighter;
+    letter-spacing: 3px;
+}
+.thank p{
+    color: var(--Dark-grayish-violet);
+}
+.thank button{
+    margin-top: 40px;
+}
+
+
+/* mobile screen */
+
+@media (max-width:375px){
+    .container{
+        flex-direction: column;
+    }
+    .card{
+        background-image: url("images/bg-main-mobile.png");
+        height:280px ;
+        width: 100%;
+    }
+    .card .front{
+        width: 300px;
+        height: 180px;
+        left: 40px;
+        top:174px;
+        z-index: 1;
+        box-shadow: 0  50px 30px hsla(0, 0%, 60%, 0.73);
+    }
+    .front h2{
+        font-size: 20px;
+    }
+    .card .back{
+        width: 300px;
+        height: 180px;
+        left: 75px;
+        top:57px;
+        
+    }
+    .form{
+        margin-left: -530px;
+        margin-top: 140px;
+    }
+}
+/* 
+
+
+ */

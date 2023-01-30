@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> -->
+  <link rel="stylesheet" href="style.css">
+  <title>Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- side cards -->
+    <div class="card">
+      <div class="front">
+        <div>
+          <svg width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff"/>
+            <path d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z" stroke="#fff"/>
+          </svg>
+        </div>
+        <h2 class="card-number-display">0000 0000 0000 0000</h2>
+        <div class="info">
+          <h4 class="cardholder-display">Jane Appleseed</h4>
+          <h4 class="expiry-month-display">0000<h4>
+          <h4 class="expiry-year-display"></h4>
+        </div>
+      </div>
+      <div class="back">
+        <p class="cvc-display">000</p>
+      </div>
+    </div>
+    <!-- info side -->
+    <div class="form card-details">
+        <form action="" id="myForm" name="myForm">
+          <!-- card name -->
+          <div class="input-control card-name">
+            <label for="cardholder-name">CARDHOLDER NAME</label></br>
+            <input 
+              class="cardholder-name"
+              type="text"
+              name="cardholder-name"
+              id="cardholder-name"
+              placeholder="e.g Jane Appleseed"
+              oninput = "inputName()" >
+              <div class="erorr" id="errorMsg"></div>
+          </div>
+          <!-- card number -->
+          <div class="input-control card-number">
+            <label for="card-number">CARD NUMBER</label></br>
+            <input type="text" 
+            id="card-number" 
+            name="card-number" 
+            class="card-number"
+            placeholder="e.g 1234 5678 9123 0000" 
+            oninput = "inputCardNum()">
+            <div class="erorr" id="card-number-error"></div>
+          </div>
+          <!-- exp. date -->
+          <div class="exp-date">
+            <div class="input-control">
+              <label for="expiry-date">EXP. DATE</label>
+              <input type="text" 
+              placeholder="MM"
+              class="expiry"
+              name="expiry-date"
+              oninput = "inputMM()">
+              <!-- <div class="erorr"></div> -->
+            </div>
+            <div class="input-control">
+              <label for="expiry-date">(MM/YY)</label>
+              <input type="text"
+              placeholder="YY"
+              class="expiry"
+              name="expiry-date"
+              oninput = "inputYY()">
+              <div class="erorr" id="expiry-error"></div>
+            </div>
+            <div class="input-control">
+              <label for="cvc">CVC</label>
+              <input type="text" 
+              placeholder="e.g 123"
+              id="cvc"
+              name="cvc"
+                class="edit cvc"
+                oninput="inputCvc()">
+              <div class="erorr" id="error-cvc"></div>
+            </div>
+
+          </div>
+          <button class="submit" id="submit" type="submit">Comfirm</button>
+      </form>
+      <div class="thank thank-you hidden" id="thank-you">
+        <img src="images/icon-complete.svg" alt="">
+        <h1 id="thank-you-header">THANK YOU!</h1>
+        <p>We've added your card details</p>
+        <button class="submit" id='continue'>Continue</button>
+      </div>  
+    </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Salma Saeed</a>.
+  </div>
+  <!-- <script src="script.js"></script> -->
+  <script src="script-2.js"></script>
+
+</body>
+</html>
